@@ -134,7 +134,7 @@ class BaseViewController: UIViewController {
                 })
             }
             else if notification.name == UIResponder.keyboardWillHideNotification {
-                bottomCon.constant = 24
+                bottomCon.constant = 0
                 UIView.animate(withDuration: TimeInterval(duration)) {
                     self.view.layoutIfNeeded()
                 }

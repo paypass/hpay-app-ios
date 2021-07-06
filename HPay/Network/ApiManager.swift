@@ -30,13 +30,14 @@ class ApiManager: NSObject {
      5. method_info : "xxxx-xx-xxxx-9777"
      6. verify_code : "388833"
      */
-    func requestAddPaymentMethod(param:[String:Any], success:ResSuccess?, fail:ResFailure?) {
+    func requestRegistPaymentMethod(param:[String:Any], success:ResSuccess?, fail:ResFailure?) {
         NetworkManager.ins.request(.post, "/hpay-wallet/paymethod", param) { res in
             success?(res)
         } failure: { error in
             fail?(error)
         }
     }
+    
     ///등록된 결제수단 목록
     func requestRegisteredPaymentMethods(success:ResSuccess?, fail:ResFailure?) {
         NetworkManager.ins.request(.get, "/hpay-app/paymethod/1", nil) { res in
@@ -45,4 +46,15 @@ class ApiManager: NSObject {
             fail?(error)
         }
     }
+    
+    ///등록가능한 결제수단 목록
+    func requestRegistAvailablePayment(method:String, success:ResSuccess?, fail:ResFailure?) {
+        let url = "/hpay-wallet/providers?paymethod_type=\(method)"
+        NetworkManager.ins.request(.get, url, nil) { res in
+            success?(res)
+        } failure: { error in
+            fail?(error)
+        }
+    }
+   
 }

@@ -79,6 +79,7 @@
 		E993DE7A2693E7C2007C13EB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE782693E7C2007C13EB /* ApiManager.swift */; };
 		E993DE7E2693EB26007C13EB /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E993DE7D2693EB26007C13EB /* loading.gif */; };
 		E993DE80269418FD007C13EB /* SelectedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE7F269418FD007C13EB /* SelectedBtn.swift */; };
+		E993DE8226945AB7007C13EB /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE8126945AB7007C13EB /* ShareData.swift */; };
 		E9A6894F268D658800D044BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6894E268D658800D044BD /* CameraController.swift */; };
 		E9A68956268D8A9300D044BD /* CaptureVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A68954268D8A9300D044BD /* CaptureVideoView.swift */; };
 		E9A68957268D8A9300D044BD /* CaptureVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A68955268D8A9300D044BD /* CaptureVideoView.xib */; };
@@ -164,6 +165,7 @@
 		E993DE782693E7C2007C13EB /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		E993DE7D2693EB26007C13EB /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		E993DE7F269418FD007C13EB /* SelectedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBtn.swift; sourceTree = "<group>"; };
+		E993DE8126945AB7007C13EB /* ShareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		E9A6894E268D658800D044BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		E9A68954268D8A9300D044BD /* CaptureVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVideoView.swift; sourceTree = "<group>"; };
 		E9A68955268D8A9300D044BD /* CaptureVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureVideoView.xib; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		E993DE7B2693EAFC007C13EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E993DE8126945AB7007C13EB /* ShareData.swift */,
 				E993DE782693E7C2007C13EB /* ApiManager.swift */,
 				E993DE772693E7C2007C13EB /* NetworkManager.swift */,
 			);
@@ -558,6 +561,7 @@
 				E97CD4A2268AEE7800F02509 /* HistoryFooterView.swift in Sources */,
 				E94B991F268867A5000AA679 /* CToast.swift in Sources */,
 				E973EE172688498400FE86D7 /* HomeViewController.swift in Sources */,
+				E993DE8226945AB7007C13EB /* ShareData.swift in Sources */,
 				E94B98A7268857C9000AA679 /* LeftSideMenuViewController.swift in Sources */,
 				E94B9913268867A5000AA679 /* CButton.swift in Sources */,
 				E9A68956268D8A9300D044BD /* CaptureVideoView.swift in Sources */,

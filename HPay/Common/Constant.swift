@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-//let baseUrl = "http://3.34.185.74:8761"
 let baseUrl = "http://3.34.185.74:8080"
 public func RGB(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
     UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)

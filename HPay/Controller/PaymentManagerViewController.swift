@@ -21,7 +21,7 @@ class PaymentManagerCell: UITableViewCell {
             bgView.layer.borderColor = RGBA(37, 27, 151, 0.3).cgColor
         }
         else {
-            bgView.layer.borderWidth = 0
+            bgView.layer.borderWidth = 0.01
             bgView.layer.borderColor = UIColor.clear.cgColor
         }
     }

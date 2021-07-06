@@ -781,7 +781,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fOg-8f-icM">
                                                         <rect key="frame" x="24" y="24" width="318" height="80.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="걸재수단 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4r-Hl-IdM">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="걸재수단 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4r-Hl-IdM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -793,7 +793,7 @@
                                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vNC-T3-dk9">
                                                                         <rect key="frame" x="0.0" y="0.0" width="318" height="52"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLx-R6-bHN" customClass="CTextField" customModule="HPay" customModuleProvider="target">
+                                                                            <textField opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLx-R6-bHN" customClass="CTextField" customModule="HPay" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="275.5" height="52"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -846,8 +846,76 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-o2-gds">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-ac-cTY">
                                                         <rect key="frame" x="24" y="128.5" width="318" height="80.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rY-Oe-NcY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9w-HX-fNL" customClass="CButton" customModule="HPay" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28.5" width="318" height="52"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SpA-E9-epP">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="52"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnA-kb-M5O" customClass="CTextField" customModule="HPay" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="275.5" height="52"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetT">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetB">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetL">
+                                                                                        <real key="value" value="16"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetR">
+                                                                                        <real key="value" value="16"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d4g-gq-fBp">
+                                                                                <rect key="frame" x="283.5" y="5" width="18.5" height="42.5"/>
+                                                                                <color key="tintColor" name="AccentColor"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="16"/>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="52" id="Xiq-uW-Say"/>
+                                                                    <constraint firstItem="SpA-E9-epP" firstAttribute="top" secondItem="s9w-HX-fNL" secondAttribute="top" id="fJm-vN-jIC"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="SpA-E9-epP" secondAttribute="trailing" id="h7N-0q-MpN"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="SpA-E9-epP" secondAttribute="bottom" id="n8a-7d-99G"/>
+                                                                    <constraint firstItem="SpA-E9-epP" firstAttribute="leading" secondItem="s9w-HX-fNL" secondAttribute="leading" id="neF-mr-7mJ"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBoderAll" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="16"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onClickedButtonActions:" destination="Sij-1Z-rvj" eventType="touchUpInside" id="dTe-6S-TA5"/>
+                                                                </connections>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eOL-o2-gds">
+                                                        <rect key="frame" x="24" y="233" width="318" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카드 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNQ-7c-wEQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
@@ -861,7 +929,7 @@
                                                                     <constraint firstAttribute="height" constant="52" id="oav-Yi-r0F"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="insetT">
                                                                         <real key="value" value="0.0"/>
@@ -890,7 +958,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="g79-iM-une">
-                                                        <rect key="frame" x="24" y="233" width="318" height="80.5"/>
+                                                        <rect key="frame" x="24" y="337.5" width="318" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별칭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZF-Nk-beK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
@@ -933,7 +1001,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFB-uX-fwC">
-                                                        <rect key="frame" x="24" y="337.5" width="318" height="352.5"/>
+                                                        <rect key="frame" x="24" y="442" width="318" height="248"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -989,16 +1057,20 @@
                         <color key="backgroundColor" name="BlueAndDark"/>
                         <constraints>
                             <constraint firstItem="wAQ-FY-Fky" firstAttribute="trailing" secondItem="Vyb-r9-Lmy" secondAttribute="trailing" constant="24" id="UcR-v2-Msx"/>
-                            <constraint firstAttribute="bottom" secondItem="Vyb-r9-Lmy" secondAttribute="bottom" constant="24" identifier="bottom_24" id="khi-3Z-NkZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Vyb-r9-Lmy" secondAttribute="bottom" constant="24" id="khi-3Z-NkZ"/>
                             <constraint firstItem="Vyb-r9-Lmy" firstAttribute="top" secondItem="wAQ-FY-Fky" secondAttribute="top" constant="24" id="nq4-Xk-kJf"/>
                             <constraint firstItem="Vyb-r9-Lmy" firstAttribute="leading" secondItem="wAQ-FY-Fky" secondAttribute="leading" constant="24" id="rui-Wm-P9G"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomCon" destination="khi-3Z-NkZ" id="ddV-IM-M6F"/>
+                        <outlet property="btnMethod" destination="s9w-HX-fNL" id="GbX-JU-Ysl"/>
                         <outlet property="btnMode" destination="dRA-5j-a7U" id="mKQ-5d-fXE"/>
                         <outlet property="btnRegist" destination="cBe-yN-gyz" id="PE5-7U-wK3"/>
+                        <outlet property="svCardNumber" destination="eOL-o2-gds" id="KeG-GG-cu2"/>
+                        <outlet property="svMehtod" destination="2UL-ac-cTY" id="eKL-Cr-iib"/>
+                        <outlet property="svName" destination="g79-iM-une" id="TSU-g2-NxK"/>
                         <outlet property="tfCardNum" destination="Ewf-OF-cT2" id="ZGC-v2-8U1"/>
-                        <outlet property="tfMode" destination="nLx-R6-bHN" id="9Jh-bs-C0z"/>
                         <outlet property="tfName" destination="tHt-rQ-jwK" id="xRU-9S-m0m"/>
                     </connections>
                 </viewController>
@@ -1500,6 +1572,9 @@
         </designable>
         <designable name="c7k-7o-fQ0">
             <size key="intrinsicContentSize" width="24" height="20"/>
+        </designable>
+        <designable name="dnA-kb-M5O">
+            <size key="intrinsicContentSize" width="98.5" height="23"/>
         </designable>
         <designable name="nLx-R6-bHN">
             <size key="intrinsicContentSize" width="98.5" height="23"/>

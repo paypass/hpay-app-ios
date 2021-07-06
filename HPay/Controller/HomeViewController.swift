@@ -35,13 +35,13 @@ class HomeViewController: BaseViewController {
         cardView.layer.cornerRadius = 16
         cardView.addShadow(offset: CGSize(width: 5, height: -5), color: RGBA(0, 0, 0, 0.3), raduius: 5, opacity: 0.3)
         self.setHeaderView()
-        self.requestMainData()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigation()
-       
+        self.requestMainData()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -53,6 +53,8 @@ class HomeViewController: BaseViewController {
                 self.payments = res["main_transaction"].arrayValue
                 self.balance = res["total_balance"].numberValue
                 self.decorationUi()
+                ShareData.ins.walletId = res["wallet_id"].stringValue
+                ShareData.ins.walletName = res["wallet_name"].stringValue
             }
             else {
                 self.showErrorToast(res)
