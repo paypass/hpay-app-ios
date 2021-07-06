@@ -16,22 +16,26 @@ class QrPaymentViewController: BaseViewController {
     @IBOutlet weak var ivScanAni: UIImageView!
     @IBOutlet weak var btnQrFocus: UIButton!
     @IBOutlet weak var fucusingview: UIView!
-    @IBOutlet weak var btnPay: CButton!
-    @IBOutlet weak var btnBank: CButton!
-    @IBOutlet weak var btnCard: CButton!
+    @IBOutlet weak var btnPay: SelectedBtn!
+    @IBOutlet weak var btnBank: SelectedBtn!
+    @IBOutlet weak var btnCard: SelectedBtn!
     @IBOutlet weak var qrScanView: CaptureVideoView!
     @IBOutlet weak var widthFucusingView: NSLayoutConstraint!
     @IBOutlet weak var yPosLineView: NSLayoutConstraint!
     
+    var data:JSON!
+    var selMethods: [JSON] = [] {
+        didSet {
+            self.pagerView.reloadData()
+        }
+    }
     
     var isScan = false
-    
     var cards:[JSON] = []
     var revers:CGFloat = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         bgView.layer.cornerRadius = 20
         bgView.layer.maskedCorners = CACornerMask(TL: true, TR: true, BL: false, BR: false)
@@ -55,6 +59,7 @@ class QrPaymentViewController: BaseViewController {
         self.setupPagerView()
         qrScanView.captureInterval = 0.5
         qrScanView.systemSoundName = "access_scan_complete"
+        self.requestPaymentMethodList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,64 +80,59 @@ class QrPaymentViewController: BaseViewController {
         CNavigationBar.drawTitle(self, attr, nil)
         CNavigationBar.drawRight(self, "bell.badge", nil, TAG_NAVI_BELL, #selector(actionNaviBell))
     }
-
+    
     func setupPagerView() {
         pagerView.register(UINib(nibName: "CardPagerCell", bundle: nil), forCellWithReuseIdentifier: "CardPagerCell")
 //        pagerView.automaticSlidingInterval = 3.0
 //        pagerView.isInfinite = true
 //        pagerView.decelerationDistance = FSPagerView.automaticDistance
         pagerView.transformer = FSPagerViewTransformer(type: .linear)
-        
+//        pagerView.transformer?.minimumScale = 0.85
         pagerView.interitemSpacing = 10
-//        let scale = CGFloat(0.9)
-//        let itemSize = pagerView.frame.size.applying(CGAffineTransform(scaleX: scale, y: scale))
-//        pagerView.itemSize = itemSize
+        pagerView.scrollDirection = .horizontal
+      
+        let scale = CGFloat(0.85)
+        let itemSize = pagerView.frame.size.applying(CGAffineTransform(scaleX: scale, y: scale))
+        pagerView.itemSize = itemSize
         
-        let transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-        self.pagerView.itemSize = self.pagerView.frame.size.applying(transform)
         
         pagerView.delegate = self
         pagerView.dataSource = self
     }
+    func requestPaymentMethodList() {
+        ApiManager.ins.requestRegisteredPaymentMethods { res in
+            print("payment method list: \(res)")
+            if res.isEmpty == false {
+                let group = Dictionary(grouping: res.arrayValue) { (item:JSON) in
+                    return item["pay_method_type"].stringValue
+                }
+                self.data = JSON(group)
+                self.btnPay.sendActions(for: .touchUpInside)
+            }
+        } fail: { error in
+            self.showErrorToast(error)
+        }
+    }
+    
     
     @IBAction func onClickedBtnActions(_ sender: UIButton) {
         if sender == btnPay {
             btnPay.isSelected = true
             btnBank.isSelected = false
             btnCard.isSelected = false
-            
-            
-            btnPay.borderColor = UIColor(named: "AccentColor")
-            btnBank.borderColor = UIColor.lightGray
-            btnCard.borderColor = UIColor.lightGray
-            btnPay.borderWidth = 2
-            btnBank.borderWidth = 1
-            btnCard.borderWidth = 1
+            self.selMethods = data["HPAY"].arrayValue
         }
         else if sender == btnBank {
             btnPay.isSelected = false
             btnBank.isSelected = true
             btnCard.isSelected = false
-            
-            btnPay.borderColor = UIColor.lightGray
-            btnBank.borderColor = UIColor(named: "AccentColor")
-            btnCard.borderColor = UIColor.lightGray
-            btnPay.borderWidth = 1
-            btnBank.borderWidth = 2
-            btnCard.borderWidth = 1
+            self.selMethods = data["BANK"].arrayValue
         }
         else if sender == btnCard {
             btnPay.isSelected = false
             btnBank.isSelected = false
             btnCard.isSelected = true
-            
-            btnPay.borderColor = UIColor.lightGray
-            btnBank.borderColor = UIColor.lightGray
-            btnCard.borderColor = UIColor(named: "AccentColor")
-            btnPay.borderWidth = 1
-            btnBank.borderWidth = 1
-            btnCard.borderWidth = 2
-
+            self.selMethods = data["CARD"].arrayValue
         }
         else if sender == btnQrFocus {
             isScan = !isScan
@@ -199,12 +199,12 @@ class QrPaymentViewController: BaseViewController {
 
 extension QrPaymentViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return cards.count
+        return selMethods.count
     }
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> UICollectionViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "CardPagerCell", at: index) as! CardPagerCell
-        let item = cards[index]
-        cell.configurationData(item)
+        let item = selMethods[index]
+        cell.configurationData(item, index)
         return cell
     }
     

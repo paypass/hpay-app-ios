@@ -9,9 +9,9 @@ import UIKit
 
 class HistoryDetailViewController: BaseViewController {
 
-    @IBOutlet weak var btnPay: CButton!
-    @IBOutlet weak var btnBank: CButton!
-    @IBOutlet weak var btnCard: CButton!
+    @IBOutlet weak var btnPay: SelectedBtn!
+    @IBOutlet weak var btnBank: SelectedBtn!
+    @IBOutlet weak var btnCard: SelectedBtn!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var piChartView: UIView!
     
@@ -28,6 +28,8 @@ class HistoryDetailViewController: BaseViewController {
         btnBank.sendActions(for: .touchUpInside)
         
         CNavigationBar.drawBackButton(self, "결제 내역", #selector(actionNaviBack))
+        
+        btnPay.sendActions(for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,41 +44,16 @@ class HistoryDetailViewController: BaseViewController {
             btnPay.isSelected = true
             btnBank.isSelected = false
             btnCard.isSelected = false
-            
-            
-            btnPay.borderColor = UIColor(named: "AccentColor")
-            btnBank.borderColor = UIColor.lightGray
-            btnCard.borderColor = UIColor.lightGray
-            btnPay.borderWidth = 2
-            btnBank.borderWidth = 1
-            btnCard.borderWidth = 1
-            
-            
         }
         else if sender == btnBank {
             btnPay.isSelected = false
             btnBank.isSelected = true
             btnCard.isSelected = false
-            
-            btnPay.borderColor = UIColor.lightGray
-            btnBank.borderColor = UIColor(named: "AccentColor")
-            btnCard.borderColor = UIColor.lightGray
-            btnPay.borderWidth = 1
-            btnBank.borderWidth = 2
-            btnCard.borderWidth = 1
         }
         else if sender == btnCard {
             btnPay.isSelected = false
             btnBank.isSelected = false
             btnCard.isSelected = true
-            
-            btnPay.borderColor = UIColor.lightGray
-            btnBank.borderColor = UIColor.lightGray
-            btnCard.borderColor = UIColor(named: "AccentColor")
-            btnPay.borderWidth = 1
-            btnBank.borderWidth = 1
-            btnCard.borderWidth = 2
-            
         }
     }
 }

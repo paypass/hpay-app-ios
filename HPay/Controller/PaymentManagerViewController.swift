@@ -64,8 +64,6 @@ extension PaymentManagerViewController: UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PaymentManagerCell.identifier) as? PaymentManagerCell else {
             return UITableViewCell()
         }
-        
-        
         return cell
     }
 }

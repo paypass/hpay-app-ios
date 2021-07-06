@@ -10,6 +10,7 @@ import SwiftyJSON
 
 class CardPagerCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
+    
     var cardView: CardView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,10 @@ class CardPagerCell: UICollectionViewCell {
         cardView.clipsToBounds = true
     }
     
-    func configurationData(_ data: JSON) {
-        
+    func configurationData(_ data: JSON, _ index:Int) {
+        let idx = index%objColors.count
+        let color = objColors[idx]
+        cardView.bgView.backgroundColor = color
+        cardView.configurationData(data: data)
     }
 }

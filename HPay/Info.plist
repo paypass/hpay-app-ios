@@ -66,5 +66,10 @@
 	<string>QR Scan을 하기 위해 카메라 사용 권한이 필요합니다.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>캘러리 접근을 허용해주세요.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

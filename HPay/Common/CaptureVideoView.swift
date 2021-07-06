@@ -190,7 +190,7 @@ extension CaptureVideoView: AVCaptureVideoDataOutputSampleBufferDelegate {
                 fileURLs.append(fileURL)
             }
         }
-        print(fileURLs)
+//        print(fileURLs)
         var findUrl: URL? = nil
         for url in fileURLs {
             if url.absoluteString.contains(soundName) == true {
@@ -198,7 +198,7 @@ extension CaptureVideoView: AVCaptureVideoDataOutputSampleBufferDelegate {
                 break
             }
         }
-        print("find system audio url: \(findUrl)")
+        print("find system audio url: \(String(describing: findUrl))")
         return findUrl
     }
 }

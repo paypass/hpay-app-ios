@@ -30,9 +30,10 @@ class AddPaymentViewController: BaseViewController {
         super.viewWillDisappear(animated)
         self.removeKeyboardNotification()
     }
+    
     @IBAction func onClickedButtonActions(_ sender: UIButton) {
         if sender == btnMode {
-            let mode = ["카드", "계좌"]
+            let mode = ["HPAY", "BANK", "CARD"]
             let vc = PopupListViewController.initWithType(.normal, "선택해 주세요.", mode, nil) { vcs, selItem, index in
                 vcs.dismiss(animated: true, completion: nil)
                 guard let selItem = selItem as? String else {

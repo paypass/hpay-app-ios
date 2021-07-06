@@ -75,6 +75,10 @@
 		E97CD4C3268B0CD700F02509 /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97CD4B9268B0CD700F02509 /* FSPagerCollectionView.swift */; };
 		E97CD4C6268B0DBD00F02509 /* CardPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97CD4C4268B0DBD00F02509 /* CardPagerCell.swift */; };
 		E97CD4C7268B0DBD00F02509 /* CardPagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97CD4C5268B0DBD00F02509 /* CardPagerCell.xib */; };
+		E993DE792693E7C2007C13EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE772693E7C2007C13EB /* NetworkManager.swift */; };
+		E993DE7A2693E7C2007C13EB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE782693E7C2007C13EB /* ApiManager.swift */; };
+		E993DE7E2693EB26007C13EB /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E993DE7D2693EB26007C13EB /* loading.gif */; };
+		E993DE80269418FD007C13EB /* SelectedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E993DE7F269418FD007C13EB /* SelectedBtn.swift */; };
 		E9A6894F268D658800D044BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6894E268D658800D044BD /* CameraController.swift */; };
 		E9A68956268D8A9300D044BD /* CaptureVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A68954268D8A9300D044BD /* CaptureVideoView.swift */; };
 		E9A68957268D8A9300D044BD /* CaptureVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A68955268D8A9300D044BD /* CaptureVideoView.xib */; };
@@ -156,6 +160,10 @@
 		E97CD4B9268B0CD700F02509 /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
 		E97CD4C4268B0DBD00F02509 /* CardPagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPagerCell.swift; path = HPay/Views/CardPagerCell.swift; sourceTree = SOURCE_ROOT; };
 		E97CD4C5268B0DBD00F02509 /* CardPagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CardPagerCell.xib; path = HPay/Views/CardPagerCell.xib; sourceTree = SOURCE_ROOT; };
+		E993DE772693E7C2007C13EB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E993DE782693E7C2007C13EB /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		E993DE7D2693EB26007C13EB /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		E993DE7F269418FD007C13EB /* SelectedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBtn.swift; sourceTree = "<group>"; };
 		E9A6894E268D658800D044BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		E9A68954268D8A9300D044BD /* CaptureVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVideoView.swift; sourceTree = "<group>"; };
 		E9A68955268D8A9300D044BD /* CaptureVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptureVideoView.xib; sourceTree = "<group>"; };
@@ -264,6 +272,8 @@
 		E973EDFB2688400500FE86D7 /* HPay */ = {
 			isa = PBXGroup;
 			children = (
+				E993DE7C2693EB12007C13EB /* Resource */,
+				E993DE7B2693EAFC007C13EB /* Network */,
 				E973EE022688400500FE86D7 /* Main.storyboard */,
 				E973EE11268844C900FE86D7 /* Controller */,
 				E973EE122688450200FE86D7 /* Views */,
@@ -318,6 +328,7 @@
 				E97CD4A3268AEE8200F02509 /* HistoryFooterView.xib */,
 				E97CD4C4268B0DBD00F02509 /* CardPagerCell.swift */,
 				E97CD4C5268B0DBD00F02509 /* CardPagerCell.xib */,
+				E993DE7F269418FD007C13EB /* SelectedBtn.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +365,23 @@
 				E97CD4B9268B0CD700F02509 /* FSPagerCollectionView.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E993DE7B2693EAFC007C13EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E993DE782693E7C2007C13EB /* ApiManager.swift */,
+				E993DE772693E7C2007C13EB /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E993DE7C2693EB12007C13EB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E993DE7D2693EB26007C13EB /* loading.gif */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +454,7 @@
 				E97CD4BB268B0CD700F02509 /* README-OBJECTIVE-C.md in Resources */,
 				E973EE042688400500FE86D7 /* Main.storyboard in Resources */,
 				E97CD4A4268AEE8200F02509 /* HistoryFooterView.xib in Resources */,
+				E993DE7E2693EB26007C13EB /* loading.gif in Resources */,
 				E94B992C2688C14E000AA679 /* HistoryCell.xib in Resources */,
 				E94B9925268867A5000AA679 /* CAlertViewController.xib in Resources */,
 			);
@@ -488,6 +517,7 @@
 				E97CD4C6268B0DBD00F02509 /* CardPagerCell.swift in Sources */,
 				E94B9908268867A5000AA679 /* CTextView.swift in Sources */,
 				E97CD4C0268B0CD700F02509 /* FSPageViewLayout.swift in Sources */,
+				E993DE792693E7C2007C13EB /* NetworkManager.swift in Sources */,
 				E94B9920268867A5000AA679 /* ContactsManager.swift in Sources */,
 				E931D83B268EC51E00B45ACA /* BaseNavigationController.swift in Sources */,
 				E94B991E268867A5000AA679 /* ScreenCaptureDetector.swift in Sources */,
@@ -519,6 +549,7 @@
 				E94B9927268867A5000AA679 /* SectionHeaderExapndFlowLayout.swift in Sources */,
 				E97CD4BF268B0CD700F02509 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				E973EDFF2688400500FE86D7 /* SceneDelegate.swift in Sources */,
+				E993DE80269418FD007C13EB /* SelectedBtn.swift in Sources */,
 				E94B9909268867A5000AA679 /* ProfanityFilter.swift in Sources */,
 				E97CD4BD268B0CD700F02509 /* FSPageViewTransformer.swift in Sources */,
 				E94B9918268867A5000AA679 /* Extension.swift in Sources */,
@@ -531,6 +562,7 @@
 				E94B9913268867A5000AA679 /* CButton.swift in Sources */,
 				E9A68956268D8A9300D044BD /* CaptureVideoView.swift in Sources */,
 				E94B991C268867A5000AA679 /* Utility.swift in Sources */,
+				E993DE7A2693E7C2007C13EB /* ApiManager.swift in Sources */,
 				E94B98A226885403000AA679 /* QrPaymentViewController.swift in Sources */,
 				E97CD4BE268B0CD700F02509 /* FSPagerViewCell.swift in Sources */,
 				E97CD4A6268AFC5400F02509 /* HistoryDetailViewController.swift in Sources */,

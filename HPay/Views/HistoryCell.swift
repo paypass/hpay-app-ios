@@ -38,6 +38,24 @@ class HistoryCell: UITableViewCell {
     }
     
     func configurationData(data: JSON) {
+        let amount = data["amount"].numberValue
+        let shop_name = data["shop_name"].stringValue // hanpass;
+        let transaction_date = data["transaction_date"].stringValue // "2021-06-12";
+        let transaction_type = data["transaction_type"].stringValue // PAYMENT;
+     
+        lbTitle.text = shop_name
+        lbDate.text = transaction_date
+        
+        if transaction_type == "CHARGE" {
+            btnState.backgroundColor = UIColor.systemPink.withAlphaComponent(0.2)
+            btnState.tintColor = UIColor.systemPink
+        }
+        else {
+            btnState.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.2)
+            btnState.tintColor = UIColor.systemGreen
+        }
+        let strAmount = amount.stringValue.addComma()
+        lbAmount.text = "₩\(strAmount)"
         
     }
 }
