@@ -1,0 +1,190 @@
+PODS:
+  - Alamofire (5.4.3)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
+  - BSImagePicker (3.3.1)
+  - Cache (6.0.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - CommonDataModelsKit-iOS (1.0.31)
+  - CRRefresh (1.1.3)
+  - CryptoSwift (1.4.0)
+  - Firebase/Auth (8.2.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 8.2.0)
+  - Firebase/CoreOnly (8.2.0):
+    - FirebaseCore (= 8.2.0)
+  - Firebase/Crashlytics (8.2.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 8.2.0)
+  - Firebase/Messaging (8.2.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 8.2.0)
+  - FirebaseAuth (8.2.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - FirebaseCore (8.2.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+  - FirebaseCoreDiagnostics (8.2.0):
+    - GoogleDataTransport (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Logger (~> 7.4)
+    - nanopb (~> 2.30908.0)
+  - FirebaseCrashlytics (8.2.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.0)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (~> 1.2)
+  - FirebaseInstallations (8.2.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+    - PromisesObjC (~> 1.2)
+  - FirebaseMessaging (8.2.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.4)
+    - GoogleUtilities/Reachability (~> 7.4)
+    - GoogleUtilities/UserDefaults (~> 7.4)
+  - GoogleDataTransport (9.0.1):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.4.3):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.4.3):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.4.3):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.4.3):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.4.3)"
+  - GoogleUtilities/Reachability (7.4.3):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.4.3):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.6.1)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
+  - Lightbox (2.5.0):
+    - Imaginary (~> 5.0.0)
+  - Mantis (1.7.1)
+  - MasterpassQRCoreSDK (2.0.6)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PanModal (1.2.7)
+  - PromisesObjC (1.2.12)
+  - SideMenu (6.5.0)
+  - SwiftyGif (5.4.0)
+  - SwiftyJSON (4.3.0)
+  - TapQRCode-iOS (1.0.3):
+    - CommonDataModelsKit-iOS (~> 1.0.1)
+    - MasterpassQRCoreSDK (~> 2.0.6)
+  - Toast-Swift (5.0.1)
+  - UIImageViewAlignedSwift (0.8.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - AlamofireImage (~> 4.1)
+  - BSImagePicker (~> 3.1)
+  - Charts
+  - CRRefresh
+  - CryptoSwift
+  - Firebase/Auth
+  - Firebase/Crashlytics
+  - Firebase/Messaging
+  - Lightbox
+  - Mantis
+  - PanModal
+  - SideMenu (~> 6.0)
+  - SwiftyGif
+  - SwiftyJSON (~> 4.0)
+  - TapQRCode-iOS
+  - Toast-Swift (~> 5.0.1)
+  - UIImageViewAlignedSwift
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CommonDataModelsKit-iOS
+    - MasterpassQRCoreSDK
+    - TapQRCode-iOS
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - BSImagePicker
+    - Cache
+    - Charts
+    - CRRefresh
+    - CryptoSwift
+    - Firebase
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCrashlytics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleDataTransport
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - Imaginary
+    - Lightbox
+    - Mantis
+    - nanopb
+    - PanModal
+    - PromisesObjC
+    - SideMenu
+    - SwiftyGif
+    - SwiftyJSON
+    - Toast-Swift
+    - UIImageViewAlignedSwift
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  BSImagePicker: 0fe04b574d4d6b81093785d2af6c26227efc8428
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  CommonDataModelsKit-iOS: 4b1a33cd07686bcd8117f1f1ebe18373bda16af5
+  CRRefresh: 1415d4ae06837fa7bb064c44f2e102f3ef517044
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  Firebase: 12c568897b807321964e89d2b263ef4c6cff3db6
+  FirebaseAuth: 4c4fb0ba1a169f3acb4aa5b724f7ae7c0999ee44
+  FirebaseCore: 3a83f24c3de69ec9f9a426e2598125ea51f3a2ce
+  FirebaseCoreDiagnostics: 61384f54989065b15c36b5922b65112e86811d3c
+  FirebaseCrashlytics: 935dbdb043a286ca92a22d15e5780802403ea0ea
+  FirebaseInstallations: 9394ea09e242bf0816e95ac30e56a9214cc86ced
+  FirebaseMessaging: abe18570508ef84ab6957bba35871410457ed588
+  GoogleDataTransport: 04c3e9a480bbcaa2ec3f5d27f1cdeb6a92f20c8d
+  GoogleUtilities: 45dbb24a7f351d69d0a601482b39ad6c32e30dab
+  GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
+  Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
+  Mantis: 0c6052cf902f7b3b9ede7302ddc1116b64b4effe
+  MasterpassQRCoreSDK: 5d4af69a72fbf6919afa888864a019b6b4b8c1bf
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TapQRCode-iOS: 1e319e66e152427adf4005ddf102b9857e6d41fb
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  UIImageViewAlignedSwift: e4f83530f90860aa31b6840bf570034a681bd2c4
+
+PODFILE CHECKSUM: 18464bba7dc9d9b8b5e17021a84d3e49e2443ad0
+
+COCOAPODS: 1.10.1

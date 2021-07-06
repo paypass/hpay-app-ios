@@ -1,0 +1,6 @@
+framework module Pods_HPay {
+  umbrella header "Pods-HPay-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module TapQRCode_iOS {
+  umbrella header "TapQRCode-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
