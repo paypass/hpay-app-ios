@@ -190,11 +190,23 @@ class QrPaymentViewController: BaseViewController {
         }
         
         print("scan data: \(data)")
+        
+        guard let jsDic = data.parsingJsonObject(),
+              let partnerKey = jsDic["partnerKey"] as? String,
+              partnerKey.lowercased() == "hanpass" else {
+            self.view.makeToast("파트너 회사에서 발급한 유효한 QR코드가 아닙니다.")
+            return
+        }
+        guard let otid = jsDic["otid"] as? String, otid.isEmpty == false else {
+            self.view.makeToast("qr code otid is empty")
+            return
+        }
+
         qrScanView.player?.play()
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         let vc = PaymentDetailViewController.instantiateFromStoryboard(.main)!
         vc.selMethod = selMethod
-        vc.productInfo = data
+        vc.orderId = otid
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
