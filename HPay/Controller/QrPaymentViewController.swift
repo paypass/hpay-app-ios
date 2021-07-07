@@ -24,12 +24,13 @@ class QrPaymentViewController: BaseViewController {
     @IBOutlet weak var yPosLineView: NSLayoutConstraint!
     
     var data:JSON!
-    var selMethods: [JSON] = [] {
+    var methods: [JSON] = [] {
         didSet {
+            self.selMethod = methods[0]
             self.pagerView.reloadData()
         }
     }
-    
+    var selMethod:JSON!
     var isScan = false
     var cards:[JSON] = []
     var revers:CGFloat = -1
@@ -120,19 +121,19 @@ class QrPaymentViewController: BaseViewController {
             btnPay.isSelected = true
             btnBank.isSelected = false
             btnCard.isSelected = false
-            self.selMethods = data["HPAY"].arrayValue
+            self.methods = data["HPAY"].arrayValue
         }
         else if sender == btnBank {
             btnPay.isSelected = false
             btnBank.isSelected = true
             btnCard.isSelected = false
-            self.selMethods = data["BANK"].arrayValue
+            self.methods = data["BANK"].arrayValue
         }
         else if sender == btnCard {
             btnPay.isSelected = false
             btnBank.isSelected = false
             btnCard.isSelected = true
-            self.selMethods = data["CARD"].arrayValue
+            self.methods = data["CARD"].arrayValue
         }
         else if sender == btnQrFocus {
             isScan = !isScan
@@ -192,22 +193,25 @@ class QrPaymentViewController: BaseViewController {
         qrScanView.player?.play()
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         let vc = PaymentDetailViewController.instantiateFromStoryboard(.main)!
-        vc.data = res.scannedText
+        vc.selMethod = selMethod
+        vc.productInfo = data
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension QrPaymentViewController: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return selMethods.count
+        return methods.count
     }
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> UICollectionViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "CardPagerCell", at: index) as! CardPagerCell
-        let item = selMethods[index]
+        let item = methods[index]
         cell.configurationData(item, index)
         return cell
     }
-    
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.selMethod = methods[targetIndex]
+    }
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         pagerView.deselectItem(at: index, animated: false)
     }

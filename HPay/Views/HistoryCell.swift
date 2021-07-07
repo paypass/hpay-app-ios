@@ -15,6 +15,7 @@ class HistoryCell: UITableViewCell {
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbAmount: UILabel!
     @IBOutlet weak var bgView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectedBackgroundView = UIView()

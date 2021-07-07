@@ -39,7 +39,7 @@ import UIKit
     }
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
-            if borderWidth > 0 { setNeedsDisplay() }
+            setNeedsDisplay()
         }
     }
     @IBInspectable var borderBottom: Bool = false {
@@ -79,7 +79,7 @@ import UIKit
         self.autocorrectionType = UITextAutocorrectionType.no
         self.borderStyle = UITextField.BorderStyle.none
         
-        if borderBottom && borderWidth > 0 && borderColor != nil {
+        if borderBottom && (borderWidth > 0 || borderColor != nil) {
             layer.masksToBounds = true
             if subLayer != nil {
                 subLayer?.removeFromSuperlayer()

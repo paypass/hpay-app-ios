@@ -394,9 +394,10 @@ extension String {
         nf.numberStyle = .decimal
         
         nf.locale = Locale(identifier: "en_US")
-        let number = NSNumber.init(value: Double(self)!)
+        
+        let number = NSNumber.init(value: Double(self) ?? 0)
         let result = nf.string(from: number)
-        return result ?? ""
+        return result ?? self
     }
     func delComma() ->String {
         var result = self

@@ -274,9 +274,9 @@
 		E973EDFB2688400500FE86D7 /* HPay */ = {
 			isa = PBXGroup;
 			children = (
+				E973EE022688400500FE86D7 /* Main.storyboard */,
 				E993DE7C2693EB12007C13EB /* Resource */,
 				E993DE7B2693EAFC007C13EB /* Network */,
-				E973EE022688400500FE86D7 /* Main.storyboard */,
 				E973EE11268844C900FE86D7 /* Controller */,
 				E973EE122688450200FE86D7 /* Views */,
 				E973EE10268844BB00FE86D7 /* App */,

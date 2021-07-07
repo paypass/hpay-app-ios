@@ -93,7 +93,7 @@ class AddPaymentViewController: BaseViewController {
             guard let methods = methods, methods.isEmpty == false else {
                 return
             }
-            let keys:[String] = ["paymethod_name"]
+            let keys:[String] = ["pay_method_name"]
             let vc = PopupListViewController.initWithType(.normal, "선택해 주세요.", methods, keys) { (vcs, selItem, index) in
                 vcs.dismiss(animated: true, completion: nil)
                 guard let selItem = selItem as? JSON else {
@@ -103,7 +103,7 @@ class AddPaymentViewController: BaseViewController {
                     return
                 }
                 
-                tfMethod.text = selItem["paymethod_name"].stringValue
+                tfMethod.text = selItem["pay_method_name"].stringValue
                 self.selMethod = selItem
                 
                 UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) {
@@ -141,9 +141,9 @@ class AddPaymentViewController: BaseViewController {
             
             var param = [String:Any]()
             param["method_type"] = method
-            param["method_code"] = selMethod["paymethod_code"].stringValue
+            param["method_code"] = selMethod["pay_method_code"].stringValue
             param["wallet_id"] = ShareData.ins.walletId
-            param["method_name"] = selMethod["paymethod_name"].stringValue
+            param["method_name"] = selMethod["pay_method_name"].stringValue
             param["method_info"] = cardNumber
             param["verify_code"] = "111"
             

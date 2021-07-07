@@ -15,6 +15,7 @@ class CardView: UIView {
     class func loadFromNib() -> CardView {
         return Bundle.main.loadNibNamed("CardView", owner: nil, options: nil)?.first as! CardView
     }
+    @IBOutlet weak var lbType: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var svNumber: UIStackView!
@@ -32,7 +33,7 @@ class CardView: UIView {
 //        let paymethod_type = data["paymethod_type"].stringValue
         
 //        let pay_method_id = data["pay_method_id"].numberValue  //3,
-//        let pay_method_type = data["pay_method_type"].stringValue  //"CARD",
+        let pay_method_type = data["pay_method_type"].stringValue  //"CARD",
         let pay_method_info = data["pay_method_info"].stringValue  //"1234-1313-2342-5555",
         let pay_method_name = data["pay_method_name"].stringValue  //"hpay",
         let pay_method_expire = data["pay_method_expire"].stringValue  //"11\/22",
@@ -60,7 +61,7 @@ class CardView: UIView {
             lbNum.text = number
             lbNum.textAlignment = .center
         }
-        
+        lbType.text = pay_method_type
         lbTitle.text = (paymethod_name.isEmpty == false) ? paymethod_name : pay_method_name
         lbName.text = (paymethod_holder.isEmpty == false) ? paymethod_holder : pay_method_holder
         lbDate.text = (paymethod_expire.isEmpty == false) ? paymethod_expire : pay_method_expire
