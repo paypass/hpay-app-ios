@@ -73,4 +73,11 @@ class ApiManager: NSObject {
             fail?(error)
         }
     }
+    func requestPaymentDetailTransaction(param:[String:Any], success:ResSuccess?, fail:ResFailure?) {
+        NetworkManager.ins.request(.post, "/hpay-app/transaction/hanpass", param) { res in
+            success?(res)
+        } failure: { error in
+            fail?(error)
+        }
+    }
 }

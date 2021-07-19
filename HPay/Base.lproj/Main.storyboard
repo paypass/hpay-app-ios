@@ -87,83 +87,27 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hhR-ex-uJF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-JB-JR1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAv-Es-KgF">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="281.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-JB-JR1" customClass="PieChartView" customModule="Charts">
+                                                        <rect key="frame" x="16" y="16" width="374" height="249.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Ylg-JB-JR1" secondAttribute="height" multiplier="1.5:1" id="Kud-1w-KIJ"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Ylg-JB-JR1" secondAttribute="height" multiplier="1.8:1" id="Kud-1w-KIJ"/>
+                                                    <constraint firstItem="Ylg-JB-JR1" firstAttribute="top" secondItem="rAv-Es-KgF" secondAttribute="top" constant="16" id="OX0-Je-abt"/>
+                                                    <constraint firstItem="Ylg-JB-JR1" firstAttribute="leading" secondItem="rAv-Es-KgF" secondAttribute="leading" constant="16" id="cM2-lo-QNX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ylg-JB-JR1" secondAttribute="bottom" constant="16" id="pdO-QF-oPJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ylg-JB-JR1" secondAttribute="trailing" constant="24" id="qz4-pA-O1C"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gyz-g3-NlH">
-                                                <rect key="frame" x="0.0" y="230" width="414" height="45"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-8X-5dB" customClass="SelectedBtn" customModule="HPay" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="45"/>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="HPAY">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isBoderBottom" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickedBtnActions:" destination="oNr-eD-j1d" eventType="touchUpInside" id="L3E-EJ-WO3"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8k-AL-GiS" customClass="SelectedBtn" customModule="HPay" customModuleProvider="target">
-                                                        <rect key="frame" x="138" y="0.0" width="138" height="45"/>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="BANK">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isBoderBottom" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickedBtnActions:" destination="oNr-eD-j1d" eventType="touchUpInside" id="obQ-Ri-RIm"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-fA-7zJ" customClass="SelectedBtn" customModule="HPay" customModuleProvider="target">
-                                                        <rect key="frame" x="276" y="0.0" width="138" height="45"/>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="CARD">
-                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isBoderBottom" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickedBtnActions:" destination="oNr-eD-j1d" eventType="touchUpInside" id="BhC-Up-lBn"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="WFb-56-dAJ"/>
-                                                </constraints>
-                                            </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y0o-iM-8Sf">
-                                                <rect key="frame" x="0.0" y="275" width="414" height="577"/>
+                                                <rect key="frame" x="0.0" y="281.5" width="414" height="570.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="oNr-eD-j1d" id="L6g-Oy-3n2"/>
@@ -193,10 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="bgView" destination="KuQ-mX-tsV" id="ff0-ar-WHk"/>
-                        <outlet property="btnBank" destination="Y8k-AL-GiS" id="KGP-Zh-1w0"/>
-                        <outlet property="btnCard" destination="h6e-fA-7zJ" id="9ow-m4-roo"/>
-                        <outlet property="btnPay" destination="I2L-8X-5dB" id="esa-PB-a01"/>
-                        <outlet property="piChartView" destination="Ylg-JB-JR1" id="vwK-6T-Los"/>
+                        <outlet property="chartView" destination="Ylg-JB-JR1" id="pea-iP-srg"/>
                         <outlet property="tblView" destination="y0o-iM-8Sf" id="avy-Cd-HbG"/>
                     </connections>
                 </viewController>

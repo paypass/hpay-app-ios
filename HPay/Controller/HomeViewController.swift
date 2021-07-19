@@ -89,6 +89,7 @@ class HomeViewController: BaseViewController {
             }
             else if index == 500 {
                 let vc = HistoryDetailViewController.instantiateFromStoryboard(.main)!
+                vc.payment = self.selPayment
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             guard let sortType = sortType else {
