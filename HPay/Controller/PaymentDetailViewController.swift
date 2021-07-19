@@ -9,14 +9,20 @@ import UIKit
 import SwiftyJSON
 
 class PaymentDetailViewController: BaseViewController {
-
+    @IBOutlet weak var lbPartnerName: UILabel!
+    @IBOutlet weak var lbOrderNumber: UILabel!
+    @IBOutlet weak var lbTax: UILabel!
+    @IBOutlet weak var lbProductName: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var lbTotalAmount: UILabel!
+    
     @IBOutlet weak var cardView: CView!
     @IBOutlet weak var productInfoView: CView!
     @IBOutlet weak var btnPayment: CButton!
     
     var selMethod:JSON!
     var orderId:String!
-    
+    var data:JSON!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +36,53 @@ class PaymentDetailViewController: BaseViewController {
             card.layer.cornerRadius = 16
             card.clipsToBounds = true
         }
+        
+        self.requestOderProductDetailInfo()
     }
+    func requestOderProductDetailInfo() {
+        ApiManager.ins.requestOderProductDetailInfo(otid: self.orderId) { res in
+            if (res.isEmpty == false) {
+                self.data = res
+                self.reloadUi()
+            }
+            else {
+                self.view.makeToast("상품 상세 정보 요청 에러")
+            }
+        } fail: { error in
+            self.showErrorToast(error)
+        }
+
+    }
+    func reloadUi() {
+        let partner_key = data["partner_key"].stringValue  // "han-ggavquipap",
+        let partner_user_id = data["partner_user_id"].stringValue  // "hanpass",
+        let partner_order_id = data["partner_order_id"].stringValue  // "H-939393-SEES",
+        let partner_item_name = data["partner_item_name"].stringValue  // "notebook",
+        let partner_item_qty = data["partner_item_qty"].numberValue  // 1,
+        let total_amount = data["total_amount"].numberValue  // 100000,
+        let vat_amount = data["vat_amount"].numberValue  // 2000,
+        let created_at = data["created_at"].stringValue  // "2021-06-25T00:13:47.623759"
+        
+        
+        lbPartnerName.text = partner_key
+        lbOrderNumber.text = partner_order_id
+        lbTax.text = "₩"+vat_amount.stringValue.addComma()
+        lbProductName.text = partner_item_name+" X "+partner_item_qty.stringValue + "개"
+        
+        
     
+        lbTotalAmount.text = "￦"+total_amount.stringValue.addComma()
+        
+        let df = CDateFormatter.init()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        
+        if let date = df.date(from: created_at) {
+            df.dateFormat = "yyyy.MM.dd HH:mm:ss"
+            let dateStr = df.string(from: date)
+            lbDate.text = dateStr
+        }
+        
+    }
     @IBAction func onClickedBtnActions(_ sender: UIButton) {
         if sender == btnPayment {
             var paymentMethodVo = [String:Any]()

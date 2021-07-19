@@ -80,4 +80,11 @@ class ApiManager: NSObject {
             fail?(error)
         }
     }
+    func requestOderProductDetailInfo(otid:String,  success:ResSuccess?, fail:ResFailure?) {
+        NetworkManager.ins.request(.get, "/hpay-order/\(otid)", nil) { res in
+            success?(res)
+        } failure: { error in
+            fail?(error)
+        }
+    }
 }
